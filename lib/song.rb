@@ -29,15 +29,15 @@ class Song
   end
 
   def self.alphabetical
-    @@all.sort_by {|song| song.name}
+    self.all.sort_by {|song| song.name}
   end
 
   def self.destroy_all
-    @@all.clear
+    self.all.clear
   end
 
   def self.find_by_name(name)
-    searchsong=@@all.detect {|song| song.name==name}
+    searchsong=self.all.detect {|song| song.name==name}
   end
 
   def self.find_or_create_by_name(name)
@@ -63,5 +63,4 @@ class Song
     song.artist_name=array[0].strip
     song
   end
-
 end
